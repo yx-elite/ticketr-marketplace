@@ -1,7 +1,7 @@
 export default {
   providers: [
     {
-      domain: "https://sharp-troll-24.clerk.accounts.dev/",
+      domain: "https://mature-trout-43.clerk.accounts.dev/",
       applicationID: "convex",
     },
   ]
