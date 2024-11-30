@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ConvexClientProvider } from "@/components/provider/ConvexClientProvider";
 import Header from "@/components/Header";
+import SyncUserWithConvex from "@/components/SyncUserWithConvex";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <ConvexClientProvider>
           <Header />
+          <SyncUserWithConvex />
           {children}
         </ConvexClientProvider>
       </body>
