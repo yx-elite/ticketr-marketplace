@@ -16,7 +16,7 @@ const SyncUserWithConvex = () => {
     const syncUser = async () => {
       try {
         await updateUser({
-          clerkId: user.id,
+          userId: user.id,
           name: `${user.firstName ?? ''} ${user.lastName ?? ''}`.trim(),
           imageUrl: user.imageUrl ?? '',
           email: user.emailAddresses[0]?.emailAddress ?? '',
