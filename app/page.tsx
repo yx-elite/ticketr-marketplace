@@ -1,7 +1,9 @@
+import EventList from "@/components/EventList"
+
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to Ticketr Marketplace</h1>
+      <EventList />
     </div>
   )
 }
