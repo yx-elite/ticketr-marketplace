@@ -55,10 +55,10 @@ export default defineSchema({
     name: v.string(),
     email: v.string(),
     imageUrl: v.string(),
-    clerkId: v.string(),
+    userId: v.string(),
     stripeConnectId: v.optional(v.string()),
   })
-    .index("by_clerk_id", ["clerkId"])
+    .index("by_user_id", ["userId"])
     .index("by_email", ["email"]),
 });
 

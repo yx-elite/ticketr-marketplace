@@ -4,7 +4,7 @@ import { v } from "convex/values";
 
 export const updateUser = mutation({
   args: {
-    clerkId: v.string(),
+    userId: v.string(),
     name: v.string(),
     imageUrl: v.string(),
     email: v.string(),
@@ -13,7 +13,7 @@ export const updateUser = mutation({
     // Check if user exists
     const existingUser = await ctx.db
       .query("users")
-      .withIndex("by_clerk_id", (q) => q.eq("clerkId", args.clerkId))
+      .withIndex("by_user_id", (q) => q.eq("userId", args.userId))
       .first();
     
     // Update existing user if user exists
@@ -28,7 +28,7 @@ export const updateUser = mutation({
 
     // Create new user if user does not exist
     const newUserId = await ctx.db.insert("users", {
-      clerkId: args.clerkId,
+      userId: args.userId,
       name: args.name,
       imageUrl: args.imageUrl,
       email: args.email,
@@ -39,12 +39,12 @@ export const updateUser = mutation({
 
 export const getUserByClerkId = query({
   args: {
-    clerkId: v.string(),
+    userId: v.string(),
   },
   handler: async (ctx, args) => {
     const user = await ctx.db
       .query("users")
-      .withIndex("by_clerk_id", (q) => q.eq("clerkId", args.clerkId))
+      .withIndex("by_user_id", (q) => q.eq("userId", args.userId))
       .first();
     return user;
   },
