@@ -7,7 +7,7 @@ import SearchBar from "@/components/SearchBar";
 
 const Header = () => {
   return (
-    <div className="border-b">
+    <div className="border-b bg-white">
       <div className="flex flex-col lg:flex-row items-center gap-4 p-4">
         {/* Logo and Sign In/Out on Mobile */}
         <div className="flex items-center justify-between w-full lg:w-auto lg:mr-8">
